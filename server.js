@@ -11,6 +11,7 @@
 
     // mount middlware
     app.use(logger('dev'));
+    app.use(express.urlencoded({extended: false}));
     // http logger middleware
     app.use(express.static('public'));
     // express static middleware - makes static assets available to the client
