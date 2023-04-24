@@ -16,11 +16,11 @@ const reviewSchema = new Schema ({
 });
 
 const bookSchema = new Schema ({
-  author: {
+  title: {
     type: String,
     required: true
   },
-  title: {
+  author: {
     type: String,
     required: true
   },
@@ -29,11 +29,10 @@ const bookSchema = new Schema ({
     required: true
   },
   price: {
-    type: number
+    type: Number
   },
   isbn: {
-    type: number,
-    required: true
+    type: Number
   },
   reviews: [reviewSchema]
 }, {

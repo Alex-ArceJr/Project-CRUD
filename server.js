@@ -3,6 +3,7 @@
     const logger = require('morgan');
     const methodOverride = require('method-override');
     const homeRoutes = require('./routes/home');
+    const bookRoutes = require('./routes/books');
 
 
     // initialize express application
@@ -25,6 +26,7 @@
 
     // mount routes (we'll add these shortly)
     app.use('/', homeRoutes)
+    app.use('/books', bookRoutes)
 
     // tell the application to listen for requests
     app.listen(3005, () => {
