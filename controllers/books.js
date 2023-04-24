@@ -27,8 +27,19 @@ async function index(req, res) {
   }
 }
 
+async function show(req, res) {
+  try {
+    const foundBook = await Book.findById(req.params.id)
+    res.render('books/show',{book: foundBook, title: 'See Book Details'})
+
+  } catch(error) {
+    console.log(error)
+  }
+}
+
 module.exports = {
   new: newBook,
   create,
-  index
+  index,
+  show
 }

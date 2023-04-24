@@ -13,5 +13,9 @@ router.get('/', booksController.index)
 //POST /books
 router.post('/', booksController.create)
 
+// Get /books/:id
+
+router.get('/:id', booksController.show)
+
 
 module.exports = router
