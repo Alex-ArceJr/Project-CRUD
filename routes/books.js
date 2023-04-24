@@ -7,8 +7,11 @@ const booksController = require('../controllers/books')
 router.get('/new', booksController.new)
 
 
-// Get /book
+// Get /books
 router.get('/', booksController.index)
+
+//POST /books
+router.post('/', booksController.create)
 
 
 module.exports = router

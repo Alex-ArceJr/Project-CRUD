@@ -32,8 +32,7 @@ const bookSchema = new Schema ({
     type: Number
   },
   isbn: {
-    type: Number,
-    required: true
+    type: Number
   },
   reviews: [reviewSchema]
 }, {

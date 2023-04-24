@@ -7,7 +7,10 @@ function newBook(req, res) {
 
 async function create(req, res) {
   try {
-
+    for(let key in req.body) {
+      if(req.body[key] === '') delete req.body[key]
+    }
+    await Book.create(req.body)
     res.redirect('/books')
   } catch (error){
     console.log(error)

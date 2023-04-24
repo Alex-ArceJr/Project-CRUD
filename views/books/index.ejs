@@ -8,9 +8,8 @@
     <tr>
       <th>Title</th>
       <th>Author</th>
-      <th>Rating</th>
-      <th>Price</th>
-      <th>ISBN</th>
+      <th>Image</th>
+
     </tr>
   </thead>
   <tbody>
@@ -18,12 +17,12 @@
       <tr>
         <td><%=b.title%></td>
         <td><%=b.author%></td>
-        <td><%=b.rating%></td>
-        <td><%=b.price%></td>
-        <td><%=b.isbn%></td>
+        <td><a href="/books/<%= b._id %>"><img src="<%= b.imgURL %>" height="250" width="250"><br>
+          <%= b.title %>
+        </a></td>
         <td><a href="/books/<%=b._id%>">Details</a></td>
       </tr>
-    <% } )%>
+    <% })%>
   </tbody>
 </table>
 
