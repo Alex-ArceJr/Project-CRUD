@@ -1,6 +1,7 @@
  // require dependencies
     const express = require('express');
     const logger = require('morgan');
+    const homeRoutes = require('./routes/home')
 
     // initialize express application
     const app = express();
@@ -17,6 +18,7 @@
     // express static middleware - makes static assets available to the client
 
     // mount routes (we'll add these shortly)
+    app.use('/', homeRoutes)
 
     // tell the application to listen for requests
     app.listen(3005, () => {
