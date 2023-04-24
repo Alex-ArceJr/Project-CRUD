@@ -7,4 +7,8 @@ const booksController = require('../controllers/books')
 router.get('/new', booksController.new)
 
 
+// Get /book
+router.get('/', booksController.index)
+
+
 module.exports = router
