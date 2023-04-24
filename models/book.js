@@ -25,7 +25,8 @@ const bookSchema = new Schema ({
     required: true
   },
   imgURL: {
-    type: String
+    type: String,
+    required: true
   },
   price: {
     type: number
