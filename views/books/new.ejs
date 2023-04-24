@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head')%>
+<body>
+  <%- include('../partials/header')%>
+<form action="/books" method="POST">
+  <label>Title:
+    <input type="text" name="title" id="">
+  </label><br>
+  <label>Author:
+    <input type="text" name="author" id="">
+  </label><br>
+  <label>Image-URL:
+    <input type="text" name="imgURL" id="">
+  </label><br>
+  <label>Price:
+<input type="number" name="price" id="">
+  </label><br>
+  <label>ISBN:
+    <input type="number" name="isbn" id="">
+  </label><br>
+  <button type="submit">Add Book</button>
+</form>
+
+
+  <%- include('../partials/footer')%>
+</body>
+</html>
