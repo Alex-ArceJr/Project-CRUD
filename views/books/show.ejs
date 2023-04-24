@@ -3,6 +3,40 @@
 <%- include('../partials/head')%>
 <body>
   <%- include('../partials/header')%>
+  <section>
+    <table>
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Price</th>
+          <th>IBSN</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+          <img id="image" src="<%= book.imgURL %>" alt="<%= book.title %>" height="450" width="450">
+          </td>
+          <td>
+            <%= book.title %>
+          </td>
+          <td>
+            <%= book.author %>
+          </td>
+          <td>
+            <%= book.price %>
+          </td>
+          <td>
+            <%= book.isbn %>
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
 
   <%- include('../partials/footer')%>
 </body>
