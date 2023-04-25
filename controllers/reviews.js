@@ -24,8 +24,8 @@ async function deleteReview(req, res) {
     const foundBook = await Book.findById(req.params.id).populate('reviews')
     const reviews = foundBook.reviews
     // const idx = reviews.findIndex(review => review._id === new mongoose.Types.ObjectId(req.params.reviewid))
-    console.log(reviews)
-    console.log(req.params.index)
+    // console.log(reviews)
+    // console.log(req.params.index)
     // console.log(idx)
     // console.log(review._id)
     foundBook.reviews.splice(req.params.index, 1)
