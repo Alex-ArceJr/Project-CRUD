@@ -69,7 +69,7 @@
       </thead>
       <tbody>
         <% let total = 0 %>
-        <% book.reviews.forEach(r => { %>
+        <% book.reviews.forEach((r, i) => { %>
           <% total += r.rating %>
           <tr>
             <td>
@@ -80,6 +80,12 @@
             </td>
             <td>
               <%= r.rating %>
+            </td>
+            <td>
+                <!-- <%= r._id %> -->
+                <form action="/books/<%= book._id %>/reviews/<%= i %>/?_method=DELETE" method="POST">
+                  <button type="submit">X</button>
+                </form>
             </td>
           </tr>
           <% }) %>
