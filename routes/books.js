@@ -21,6 +21,10 @@ router.get('/:id/edit', booksController.edit)
 
 router.put('/:id', booksController.update)
 
+//Delete remove book from library
+router.delete('/:id', booksController.delete)
+
+
 // Get /books/:id
 
 router.get('/:id', booksController.show)

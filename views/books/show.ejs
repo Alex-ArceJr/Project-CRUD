@@ -33,6 +33,9 @@
           </td>
           <td>
             <a href="/books/<%= book.id%>/edit"><button>Edit Book</button></a>
+            <form action="/books/<%= book._id %>/?_method=DELETE" method="POST">
+              <button type="submit">Delete Book</button>
+            </form>
           </td>
         </tr>
       </tbody>
