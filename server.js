@@ -4,6 +4,7 @@
     const methodOverride = require('method-override');
     const homeRoutes = require('./routes/home');
     const bookRoutes = require('./routes/books');
+    const reviewRoutes = require('./routes/reviews')
 
 
     // initialize express application
@@ -27,6 +28,7 @@
     // mount routes (we'll add these shortly)
     app.use('/', homeRoutes)
     app.use('/books', bookRoutes)
+    app.use('/', reviewRoutes)
 
     // tell the application to listen for requests
     app.listen(3005, () => {

@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+
 //router object created from exppres router
 const homeController = require('../controllers/home')
 

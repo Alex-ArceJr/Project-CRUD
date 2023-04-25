@@ -13,6 +13,8 @@ const reviewSchema = new Schema ({
     min: 1,
     max: 10
   }
+}, {
+  timestamps: true
 });
 
 const bookSchema = new Schema ({

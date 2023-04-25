@@ -17,7 +17,7 @@
       <tbody>
         <tr>
           <td>
-          <img id="image" src="<%= book.imgURL %>" alt="<%= book.title %>" height="450" width="450">
+          <img id="image" src="<%= book.imgURL %>" alt="<%= book.title %>" height="250" width="250">
           </td>
           <td>
             <%= book.title %>
@@ -31,12 +31,71 @@
           <td>
             <%= book.isbn %>
           </td>
-
         </tr>
       </tbody>
     </table>
   </section>
+  <h2>Reviews</h2>
+  <form action="/books/<%= book._id %>/reviews" method="POST">
+    <label>
+      Review:
+      <textarea name="content" cols="30" rows="10" required></textarea>
+    </label>
+    <label>
+      Rating
+      <select name="rating">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5" >5</option>
+        <option value="6" >6</option>
+        <option value="7" selected>7</option>
+        <option value="8" >8</option>
+        <option value="9" >9</option>
+        <option value="10" >10</option>
+      </select>
+    </label>
+    <input type="submit" value="Add Review">
+  </form>
+  <% if(book.reviews.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Review</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% let total = 0 %>
+        <% book.reviews.forEach(r => { %>
+          <% total += r.rating %>
+          <tr>
+            <td>
+              <%= r.createdAt.toLocaleDateString() %>
+            </td>
+            <td>
+              <%= r.content %>
+            </td>
+            <td>
+              <%= r.rating %>
+            </td>
+          </tr>
+          <% }) %>
+          <tr>
+            <td colspan="2">Total Rating</td>
+          </tr>
+          <tr>
+            <td><%= (total / book.reviews.length).toFixed(1)%></td>
+          </tr>
+      </tbody>
+    </table>
+    <% } else { %>
+      <h5>No Reviews Yet</h5>
+      <% } %>
 
+        </section>
 
   <%- include('../partials/footer')%>
 </body>
