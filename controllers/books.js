@@ -33,7 +33,7 @@ async function update(req,res){
     const updateBook = await Book.findOneAndUpdate({_id: req.params.id}, req.body, {new: true})
 
     // // console.log(updateBook)
-     await update(req.body)
+    //  await update(req.body)
 
     res.redirect(`/books/${updateBook._id}`)
 
