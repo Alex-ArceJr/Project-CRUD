@@ -31,7 +31,7 @@ async function edit(req, res){
 async function update(req,res){
   try {
     const updateBook = await Book.findOneAndUpdate({_id: req.params.id}, req.body, {new: true})
-
+    await updateBook.save()
     // // console.log(updateBook)
     //  await update(req.body)
 
@@ -47,6 +47,16 @@ async function index(req, res) {
     const allBooks = await Book.find({})
 
     res.render('books/index', {books: allBooks, title: 'All books'})
+  } catch(error) {
+    console.log(error)
+  }
+}
+
+async function deleteBook(req, res) {
+  try {
+    const findBook = await Book.findOneAndDelete({_id: req.params.id});
+
+    res.redirect('/books')
   } catch(error) {
     console.log(error)
   }
@@ -68,5 +78,6 @@ module.exports = {
   index,
   show,
   update,
-  edit
+  edit,
+  delete: deleteBook
 }
