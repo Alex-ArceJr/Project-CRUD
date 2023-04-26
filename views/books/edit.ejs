@@ -4,8 +4,17 @@
 <body>
   <%- include('../partials/header')%>
 <form action="/books/<%= book._id %>?_method=PUT" method="POST">
-  <label>Edit Book:
+  <label>Title:
     <input type="text" name="title" id="" value="<%= book.title %>">
+  </label><br>
+  <label>Genre:
+    <select name="genre" id="genre">
+      <option value="Fiction">Fiction</option>
+      <option value="Non-Fiction">Non-Fiction</option>
+      <option value="Mystery">Mystery</option>
+      <option value="Autobiography">Autobiography</option>
+      <option value="Other">Other</option>
+    </select>
   </label><br>
   <label>Author:
     <input type="text" name="author" id="" value="<%= book.author %>">

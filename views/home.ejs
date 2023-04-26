@@ -1,13 +1,90 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <%- include('./partials/head')%>
 <body>
   <%- include('./partials/header')%>
 
-  <% books.forEach(b=> {%>
-    <a href="/books/<%= b._id %>"><img src="<%= b.imgURL %>" height="250" width="250"></a>
-  <% })%>
 
+<table class="home-table">
+  <tbody>
+    <tr class="genre">
+      <td class="home">
+        <div class="name">
+          <h3>Fiction</h3>
+        </div>
+      </td>
+      <td class="home">
+        <div class="book">
+          <% books.forEach(b=> {%>
+              <% if(b.genre === 'Fiction'){%>
+                <a href="/books/<%= b._id %>"><img src="<%= b.imgURL %>" height="200" width="200"></a>
+                <% } %>
+         <% } )%>
+        </div>
+      </td>
+    </tr>
+    <tr class="genre">
+      <td class="home">
+        <div class="name">
+          <h3>Non-Fiction</h3>
+        </div>
+      </td>
+      <td class="home">
+        <div class="book">
+          <% books.forEach(b=> {%>
+            <% if(b.genre === 'Non-fiction'){%>
+              <a href="/books/<%= b._id %>"><img src="<%= b.imgURL %>" height="200" width="200"></a>
+              <% } %>
+       <% } )%>
+        </div>
+      </td>
+    </tr><tr class="genre">
+      <td class="home">
+        <div class="name">
+          <h3>Mystery</h3>
+        </div>
+      </td>
+      <td class="home">
+        <div class="book">
+          <% books.forEach(b=> {%>
+            <% if(b.genre === 'Mystery'){%>
+              <a href="/books/<%= b._id %>"><img src="<%= b.imgURL %>" height="200" width="200"></a>
+              <% } %>
+       <% } )%>
+        </div>
+      </td>
+    </tr><tr class="genre">
+      <td class="home">
+        <div class="name">
+          <h3>Autobiography</h3>
+        </div>
+      </td>
+      <td class="home">
+        <div class="book">
+          <% books.forEach(b=> {%>
+            <% if(b.genre === 'Autobiography'){%>
+              <a href="/books/<%= b._id %>"><img src="<%= b.imgURL %>" height="200" width="200"></a>
+              <% } %>
+       <% } )%>
+        </div>
+      </td>
+    </tr><tr class="genre">
+      <td class="home">
+        <div class="name">
+          <h3>Other</h3>
+        </div>
+      </td>
+      <td class="home">
+        <div class="book">
+          <% books.forEach(b=> {%>
+            <% if(b.genre === 'Other'){%>
+              <a href="/books/<%= b._id %>"><img src="<%= b.imgURL %>" height="200" width="200"></a>
+              <% } %>
+       <% } )%>
+        </div>
+      </td>
+    </tr>
+</tbody>
+</table>
   <%- include('./partials/footer')%>
 </body>
