@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Artifika&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
 
 * {
     box-sizing: border-box;
@@ -45,6 +46,36 @@ nav > a {
     border-color: inherit;
 }
 
+.home-page td {
+    /* width: 50px; */
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 18px;
+    padding: 0;
+    display: table-cell;
+    vertical-align: inherit;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.book-cell {
+    background-color: #d2e3ec;
+
+}
+
+.home-page div {
+    display: block;
+    word-wrap: break-word;
+}
+
+.genre .name {
+    font-size: 12pt;
+    text-align: center;
+}
+
+#book {
+    margin: 7px;
+    float: left;
+    display: block;
+}
 
 
 h1{
@@ -56,6 +87,13 @@ h1{
 
 h1 > strong {
     color: navy;
+}
+
+.home-page img{
+    border: 0;
+    width: 130px;
+    max-height: 200px;
+    min-height: 200px;
 }
 
 footer {
