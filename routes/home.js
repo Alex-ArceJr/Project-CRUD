@@ -8,5 +8,7 @@ const homeController = require('../controllers/home')
 
 router.get('/', homeController.home)
 
+// router.get('/', homeController.show)
+
 //export router object
 module.exports = router;

@@ -5,5 +5,9 @@
 <body>
   <%- include('./partials/header')%>
 
+  <% books.forEach(b=> {%>
+    <a href="/books/<%= b._id %>"><img src="<%= b.imgURL %>" height="250" width="250"></a>
+  <% })%>
+
   <%- include('./partials/footer')%>
 </body>
