@@ -22,7 +22,7 @@
   <section class="show-book">
     <table>
       <tbody>
-        <tr>
+        <tr id="show-image-tr">
           <td>
           <img id="cover-image" src="<%= book.imgURL %>" alt="<%= book.title %>" height="250" width="250">
           </td>
@@ -58,65 +58,68 @@
       </tbody>
     </table>
   </section>
-  <h2>Reviews</h2>
-  <form action="/books/<%= book._id %>/reviews" method="POST">
-    <label>
-      Review:
-      <textarea name="content" cols="30" rows="10" required></textarea>
-    </label>
-    <label>
-      Rating
-      <select name="rating">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5" selected>5</option>
-    </label>
-    <input type="submit" value="Add Review">
-  </form>
-  <% if(book.reviews.length) { %>
-    <table>
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Review</th>
-          <th>Rating</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% let total = 0 %>
-        <% book.reviews.forEach((r, i) => { %>
-          <% total += r.rating %>
+  <h2 id="review-text">Reviews</h2>
+  <div id="review-section">
+
+    <form action="/books/<%= book._id %>/reviews" method="POST">
+      <label class="review-text-area">
+
+        <textarea id="review-textarea" name="content" cols="30" rows="10" required></textarea>
+      </label><br>
+      <label>
+
+        <select name="rating">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5" selected>5</option>
+      </label>
+      <input type="submit" value="Add Review">
+    </form>
+    <% if(book.reviews.length) { %>
+      <table>
+        <thead>
           <tr>
-            <td>
-              <%= r.createdAt.toLocaleDateString() %>
-            </td>
-            <td>
-              <%= r.content %>
-            </td>
-            <td>
-              <%= r.rating %>
-            </td>
-            <td>
-                <!-- <%= r._id %> -->
-                <form action="/books/<%= book._id %>/reviews/<%= i %>/?_method=DELETE" method="POST">
-                  <button type="submit">X</button>
-                </form>
-            </td>
+            <th>Date</th>
+            <th>Review</th>
+            <th>Rating</th>
           </tr>
-          <% }) %>
-          <tr>
-            <td colspan="2">Total Rating</td>
-          </tr>
-          <tr>
-            <td><%= (total / book.reviews.length).toFixed(1)%></td>
-          </tr>
-      </tbody>
-    </table>
-    <% } else { %>
-      <h5>No Reviews Yet</h5>
-      <% } %>
+        </thead>
+        <tbody>
+          <% let total = 0 %>
+          <% book.reviews.forEach((r, i) => { %>
+            <% total += r.rating %>
+            <tr>
+              <td>
+                <%= r.createdAt.toLocaleDateString() %>
+              </td>
+              <td>
+                <%= r.content %>
+              </td>
+              <td>
+                <%= r.rating %>
+              </td>
+              <td>
+                  <!-- <%= r._id %> -->
+                  <form action="/books/<%= book._id %>/reviews/<%= i %>/?_method=DELETE" method="POST">
+                    <button type="submit">X</button>
+                  </form>
+              </td>
+            </tr>
+            <% }) %>
+            <tr>
+              <td colspan="2">Total Rating</td>
+            </tr>
+            <tr>
+              <td><%= (total / book.reviews.length).toFixed(1)%></td>
+            </tr>
+        </tbody>
+      </table>
+      <% } else { %>
+        <h5>No Reviews Yet</h5>
+        <% } %>
+  </div>
 
         </section>
 
