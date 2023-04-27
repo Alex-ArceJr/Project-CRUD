@@ -1,8 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head') %>
-<body>
-  <%- include('../partials/header') %>
+<body class="index-page">
+  <%- include('../partials/header')%>
+  <div class="nav-container">
+    <nav class="nav-bar">
+      <ul class="menu">
+        <li class="nav-home">
+          <a href="/">Home</a>
+        </li>
+        <li class="nav-add">
+          <a  href="/books/new">Add Book</a>
+        </li>
+        <li class="nav-all">
+          <a href="/books"> <strong>All Books</strong></a>
+        </li>
+      </ul>
+    </nav>
+    </div>
 <table>
   <thead>
     <tr>

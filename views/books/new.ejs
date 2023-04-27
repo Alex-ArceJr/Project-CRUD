@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head')%>
-<body>
+<body class="new-page">
   <%- include('../partials/header')%>
+  <div class="nav-container">
+    <nav class="nav-bar">
+      <ul class="menu">
+        <li class="nav-home">
+          <a href="/">Home</a>
+        </li>
+        <li class="nav-add">
+          <a  href="/books/new"> <strong>Add Book</strong></a>
+        </li>
+        <li class="nav-all">
+          <a href="/books">All Books</a>
+        </li>
+      </ul>
+    </nav>
+    </div>
   <div id="form-container">
+    <h2>New Book</h1>
     <div class="form-body">
-        <h2>New Book</h1>
     <form action="/books" method="POST">
       <label>Title:
         <input type="text" name="title" id="">
