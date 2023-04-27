@@ -3,33 +3,38 @@
 <%- include('../partials/head')%>
 <body>
   <%- include('../partials/header')%>
-<form action="/books" method="POST">
-  <label>Title:
-    <input type="text" name="title" id="">
-  </label><br>
-  <label>Genre:
-    <select name="genre" id="genre">
-      <option value="Fiction">Fiction</option>
-      <option value="Non-fiction">Non-Fiction</option>
-      <option value="Mystery">Mystery</option>
-      <option value="Autobiography">Autobiography</option>
-      <option value="Other">Other</option>
-    </select>
-  </label><br>
-  <label>Author:
-    <input type="text" name="author" id="">
-  </label><br>
-  <label>Image-URL:
-    <input type="text" name="imgURL" id="">
-  </label><br>
-  <label>Price:
-<input type="number" name="price" id="">
-  </label><br>
-  <label>ISBN:
-    <input type="number" name="isbn" id="">
-  </label><br>
-  <button type="submit">Add Book</button>
-</form>
+  <div id="form-container">
+    <div class="form-body">
+        <h2>New Book</h1>
+    <form action="/books" method="POST">
+      <label>Title:
+        <input type="text" name="title" id="">
+      </label><br>
+      <label>Genre:
+        <select name="genre" id="genre">
+          <option value="Fiction">Fiction</option>
+          <option value="Non-fiction">Non-Fiction</option>
+          <option value="Mystery">Mystery</option>
+          <option value="Autobiography">Autobiography</option>
+          <option value="Other">Other</option>
+        </select>
+      </label><br>
+      <label>Author:
+        <input type="text" name="author" id="">
+      </label><br>
+      <label>Image-URL:
+        <input type="text" name="imgURL" id="">
+      </label><br>
+      <label>Price:
+        <input type="number" name="price" id="">
+      </label><br>
+      <label>ISBN:
+        <input type="number" name="isbn" id="">
+      </label><br>
+    </div>
+    <button class="form-button" type="submit">Add Book</button>
+  </form>
+</div>
 
 
   <%- include('../partials/footer')%>
