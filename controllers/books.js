@@ -14,6 +14,7 @@ async function create(req, res) {
     res.redirect('/books')
   } catch (error){
     console.log(error)
+    res.render('error', {title: 'Something went wrong'})
   }
 }
 
@@ -25,6 +26,7 @@ async function edit(req, res){
     res.render(`books/edit`, {title: 'Update Book', book: findBook})
   } catch (error) {
     console.log(error)
+    res.render('error', {title: 'Something went wrong'})
   }
 }
 
@@ -39,6 +41,7 @@ async function update(req,res){
 
   } catch (error) {
     console.log(error)
+    res.render('error', {title: 'Something went wrong'})
   }
 }
 
@@ -49,6 +52,7 @@ async function index(req, res) {
     res.render('books/index', {books: allBooks, title: 'All books'})
   } catch(error) {
     console.log(error)
+    res.render('error', {title: 'Something went wrong'})
   }
 }
 
@@ -59,6 +63,7 @@ async function deleteBook(req, res) {
     res.redirect('/books')
   } catch(error) {
     console.log(error)
+    res.render('error', {title: 'Something went wrong'})
   }
 }
 
@@ -69,6 +74,7 @@ async function show(req, res) {
 
   } catch(error) {
     console.log(error)
+    res.render('error', {title: 'Something went wrong'})
   }
 }
 
