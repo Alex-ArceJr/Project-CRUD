@@ -6,11 +6,39 @@
     box-sizing: border-box;
 }
 
+html, body{
+    height: 100%;
+}
+
 body {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
+
+.home-page, .new-page, .show-page, .index-page, .edit-page {
+    position: relative;
+}
+
+header{
+    background-color: rgb(238, 234, 229);
+
+}
+
+h1 {
+    display: inline-block;
+    order: initial;
+    background-position: center;
+    background-size: 140px 30px;
+    margin: 0 16px 0 15px;
+
+}
+
+#logo-img {
+    height: 180px;
+    width: 180px;
+    padding: 20px;
+
 }
 
 .nav-container {
@@ -23,33 +51,13 @@ body {
     font-size: 12px;
 }
 
-
 .nav-bar {
-    background-color: rgb(223, 221, 221);
+    background-color: rgb(242, 235, 226);
     display: flex;
     height: 50px;
     justify-content: center;
-    box-shadow: 0 1px 2px rgba(0,0,0, 0.75);
-}
-
-.home-table{
-    display: table;
-    border-collapse: separate;
-    box-sizing: border-box;
-    text-indent: inital;
-    border-spacing: 2px;
-    margin-top: -80px;
-    /* padding-right: 49rem; */
-    margin-left: auto;
-    margin-right: auto;
-
-}
-
-.genre{
-    text-align: center;
-    display: table-row;
-    vertical-align: inherit;
-    border-color: inherit;
+    box-shadow: 0 1px 2px rgba(102, 106, 123, 0.75);
+    margin-bottom: 20px;
 }
 
 ul {
@@ -70,12 +78,32 @@ li {
 li > a {
     color: black;
     font-size: 16px;
-    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /* font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif; */
     line-height: 50px;
     padding: 0 30px;
     text-decoration: none;
 }
 
+
+.home-table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: inital;
+    border-spacing: 2px;
+    margin-top: -80px;
+    /* padding-right: 49rem; */
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.genre {
+    text-align: center;
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
 
 .home-page td {
     /* width: 50px; */
@@ -86,18 +114,13 @@ li > a {
     font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.book-cell {
-    background-color: #d2e3ec;
-
-}
-
 .home-page div {
     display: block;
     word-wrap: break-word;
 }
 
-.genre .name {
-    font-size: 12pt;
+.genre-name {
+    font-size: 11pt;
     text-align: center;
 }
 
@@ -107,25 +130,14 @@ li > a {
     display: block;
 }
 
-
-h1{
-    font-weight: lighter;
-    color: lightskyblue;
-    font-family: 'Artifika', serif;
-    font-size: 2vmin;
-
-}
-
-h1 > strong {
-    color: navy;
-}
-
-.home-page img{
+.home-img {
     border: 0;
     width: 130px;
     max-height: 200px;
     min-height: 200px;
+    margin: 10px;
 }
+
 
 .show-book, .show-review{
     margin-right: auto;
@@ -140,9 +152,9 @@ h1 > strong {
     min-height: 400px;
 }
 
-#content {
+#show-content {
     text-align: center;
-    margin: 7px;
+    margin: 14px;
     font-size: 20px;
     font-family: Georgia,serif;
 }
@@ -170,7 +182,78 @@ h1 > strong {
 
 .buttons{
     padding: 50px;
+}
 
+.form-body {
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+    /* max-width: 500px; */
+    width: 50vmin;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.1);
+    color: rgb(0, 0, 0);
+    padding-bottom: 2.5rem;
+    overflow: auto;
+    line-height: 3vh;
+    text-align: center;
+    }
+
+#form-container {
+        /* height: 95vmin; */
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+.form-body > form > label {
+    display: block;
+    font-weight: bold;
+    color: #8c8c8c;
+    margin-bottom: 10px;
+}
+
+.form-body > form > label > input, .form-body > form > label > select {
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #f5f5f5;
+    color: #4d4d4d;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* .add-new-book > label > input:focus,
+select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #008CBA;
+} */
+
+.form-button[type="submit"] {
+    background-color: #008CBA;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-button[type="submit"]:hover {
+    background-color: #006080;
 }
 
 footer {
