@@ -6,8 +6,13 @@ async function home(req, res) {
   try{
     const allBooks = await Book.find({})
 
-
-    res.render('home', {title: 'Book Library', books: allBooks})
+    const genreFiction = await Book.find({genre: 'Fiction'})
+    const genreNonfiction = await Book.find({genre: 'Non-fiction'})
+    const genreMystery = await Book.find({genre: 'Mystery'})
+    const genreAutobiography = await Book.find({genre: 'Autobiography'})
+    const genreOther = await Book.find({genre: 'Other'})
+    
+    res.render('home', {title: 'Book Library', books: allBooks, fiction: genreFiction, nonfiction: genreNonfiction, mystery: genreMystery, autobio: genreAutobiography, other: genreOther})
 
   } catch(error) {
     console.log(error)
