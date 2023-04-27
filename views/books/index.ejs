@@ -1,48 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head') %>
-<body class="index-page">
-  <%- include('../partials/header')%>
-  <div class="nav-container">
-    <nav class="nav-bar">
-      <ul class="menu">
-        <li class="nav-home">
-          <a href="/">Home</a>
-        </li>
-        <li class="nav-add">
-          <a  href="/books/new">Add Book</a>
-        </li>
-        <li class="nav-all">
-          <a href="/books"> <strong>All Books</strong></a>
-        </li>
-      </ul>
-    </nav>
-    </div>
-    <div id="index-container">
-      <div class="index-body">
 
-        <% books.forEach(b => {%>
+  <body class="index-page">
+    <%- include('../partials/header')%>
+      <div class="nav-container">
+        <nav class="nav-bar">
+          <ul class="menu">
+            <li class="nav-home">
+              <a href="/">Home</a>
+            </li>
+            <li class="nav-add">
+              <a href="/books/new">Add Book</a>
+            </li>
+            <li class="nav-all">
+              <a href="/books"> <strong>All Books</strong></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
 
-          <div class="index-book">
-            <a class="index-image" href="/books/<%= b._id %>"><img src="<%= b.imgURL %>" height="250" width="250"></a><br>
-            <div id="index-title-author-container">
-              <a id="index-title" href="/books/<%= b._id %>">
-                <p>
+
+
+      <div id="index-container">
+        <div class="index-body">
+
+          <% books.forEach(b=> {%>
+
+            <div class="index-book">
+              <a class="index-image" href="/books/<%= b._id %>"><img src="<%= b.imgURL %>" height="250"
+                  width="250"></a><br>
+              <div id="index-title-author-container">
+                <a id="index-title" href="/books/<%= b._id %>">
+
 
                     <%= b.title %> <br>
-                  </a>
+                </a>
 
-                   <%=b.author%>
-                  </div>
-                </p>
+                <span>
+                  <%=b.author%>
+                </span>
+              </div>
 
 
-          </div>
-          <% })%>
+            </div>
+            <% })%>
         </div>
 
 
-  <%- include('../partials/footer') %>
-  </div>
-</body>
+        <%- include('../partials/footer') %>
+      </div>
+  </body>
+
 </html>

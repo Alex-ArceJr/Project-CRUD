@@ -174,10 +174,6 @@ li > a {
 }
 
 .form-body {
-  /* display: flex;
-    flex-direction: column;
-    align-items: center; */
-  /* max-width: 500px; */
   width: 50vmin;
   margin: 20px auto;
   padding: 30px;
@@ -220,12 +216,6 @@ li > a {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* .add-new-book > label > input:focus,
-select:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px #008CBA;
-} */
-
 .form-button[type="submit"] {
   background-color: #008cba;
   color: #fff;
@@ -240,7 +230,7 @@ select:focus {
   margin-right: auto;
 }
 
-#index-container {
+/* #index-container {
   position: relative;
   min-height: 100vh;
 }
@@ -270,57 +260,78 @@ select:focus {
   max-width: 250px;
   overflow: hidden;
 
-  /* font-size: 13px; */
+} */
+
+.index-body{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    outline: 0;
+}
+
+.index-book{
+    margin-right: calc(1.35% - 1.5px);
+    height: auto!important;
+    min-height: 1px!important;
+    width: 20%;
+    margin-bottom: 2.35rem;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#index-title{
+    text-decoration: none;
+    color: #333333;
+    font-weight: bold;
 }
 
 .form-button[type="submit"]:hover {
   background-color: #006080;
 }
 
-footer {
-  text-align: center;
-}
 
 #show-image-tr {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 #review-text {
-  margin-left: auto;
-  margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #review-textarea {
-  background-color: #dddddd;
-  color: #666666;
-  padding: 1em;
-  border-radius: 10px;
-  border: 2px solid transparent;
-  outline: none;
-  font-family: "Heebo", sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.4;
-  width: 200px;
-  height: 100px;
-  transition: all 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  margin-right: 3vmin;
+    background-color: #dddddd;
+    color: #666666;
+    padding: 1em;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    outline: none;
+    font-family: "Heebo", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.4;
+    width: 200px;
+    height: 100px;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 3vmin;
 }
 
 #review-textarea:hover {
-  cursor: pointer;
-  background-color: #eeeeee;
+    cursor: pointer;
+    background-color: #eeeeee;
 }
 
 #review-textarea:focus {
-  cursor: text;
-  color: #333333;
-  background-color: white;
-  border-color: #333333;
+    cursor: text;
+    color: #333333;
+    background-color: white;
+    border-color: #333333;
 }
 
 #review-section {
@@ -331,6 +342,10 @@ footer {
 }
 
 #index-title-author-container {
-    width: 200px;
+   text-align: center;
+   margin-top: 2vmin;
+}
 
+footer {
+  text-align: center;
 }
