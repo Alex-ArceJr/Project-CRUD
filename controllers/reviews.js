@@ -10,6 +10,7 @@ async function create(req, res) {
 
   } catch (error) {
     console.log(error)
+    res.render('error', {title: 'Something went wrong'})
   }
 }
 
@@ -35,6 +36,7 @@ async function deleteReview(req, res) {
     res.redirect(`/books/${foundBook._id}`)
   } catch (error) {
     console.log(error)
+    res.render('error', {title: 'Something went wrong'})
   }
 }
 
