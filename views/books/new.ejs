@@ -27,6 +27,7 @@
       </label><br>
       <label>Genre:
         <select name="genre" id="genre">
+          <option hidden disabled selected value> -- select a genre -- </option>
           <option value="Fiction">Fiction</option>
           <option value="Non-fiction">Non-Fiction</option>
           <option value="Mystery">Mystery</option>
@@ -50,8 +51,6 @@
     <button class="form-button" type="submit">Add Book</button>
   </form>
 </div>
-
-
   <%- include('../partials/footer')%>
 </body>
 </html>

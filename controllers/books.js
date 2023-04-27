@@ -22,7 +22,7 @@ async function edit(req, res){
   try {
 
     const findBook = await Book.findOne({_id: req.params.id})
-    console.log(findBook)
+    // console.log(findBook)
     res.render(`books/edit`, {title: 'Update Book', book: findBook})
   } catch (error) {
     console.log(error)
