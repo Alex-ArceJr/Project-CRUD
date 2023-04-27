@@ -6,9 +6,9 @@
     box-sizing: border-box;
 }
 
-html, body{
+/* html, body{
     height: 100%;
-}
+} */
 
 body {
     display: flex;
@@ -16,9 +16,6 @@ body {
     min-height: 100vh;
 }
 
-.home-page, .new-page, .show-page, .index-page, .edit-page {
-    position: relative;
-}
 
 header{
     background-color: rgb(238, 234, 229);
@@ -106,7 +103,7 @@ li > a {
 }
 
 .home-page td {
-    /* width: 50px; */
+
     line-height: 18px;
     padding: 0;
     display: table-cell;
