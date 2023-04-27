@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head')%>
+<head></head>
 <body>
   <%- include('../partials/header')%>
-  <section>
+  <section class="show-book">
     <table>
-      <thead>
+      <!-- <thead>
         <tr>
           <th>Image</th>
           <th>Title</th>
@@ -13,31 +14,41 @@
           <th>Price</th>
           <th>IBSN</th>
         </tr>
-      </thead>
+      </thead> -->
       <tbody>
         <tr>
           <td>
-          <img id="image" src="<%= book.imgURL %>" alt="<%= book.title %>" height="250" width="250">
+          <img id="cover-image" src="<%= book.imgURL %>" alt="<%= book.title %>" height="250" width="250">
           </td>
-          <td>
-            <%= book.title %>
-          </td>
-          <td>
-            <%= book.author %>
-          </td>
-          <td>
-            <%= book.price %>
-          </td>
-          <td>
-            <%= book.isbn %>
-          </td>
-          <td>
-            <a href="/books/<%= book.id%>/edit"><button>Edit Book</button></a>
-            <form action="/books/<%= book._id %>/?_method=DELETE" method="POST">
-              <button type="submit">Delete Book</button>
-            </form>
-          </td>
-        </tr>
+          </tr>
+          <tr>
+            <td>
+              <p id="content"> <strong>Title:</strong> <%= book.title %></p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="content"> <strong>Author:</strong> <%= book.author %></p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="content"> <strong>Price:</strong> $<%= book.price %></p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="content"> <strong>ISBN:</strong> <%= book.isbn %></p>
+            </td>
+          </tr>
+          <tr>
+            <td class="buttons">
+              <a href="/books/<%= book.id%>/edit"><button id="show-btn">Edit Book</button></a>
+              <form action="/books/<%= book._id %>/?_method=DELETE" method="POST">
+                <button id="show-btn" type="submit">Delete Book</button>
+              </form>
+            </td>
+          </tr>
       </tbody>
     </table>
   </section>
@@ -54,13 +65,7 @@
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
-        <option value="5" >5</option>
-        <option value="6" >6</option>
-        <option value="7" selected>7</option>
-        <option value="8" >8</option>
-        <option value="9" >9</option>
-        <option value="10" >10</option>
-      </select>
+        <option value="5" selected>5</option>
     </label>
     <input type="submit" value="Add Review">
   </form>

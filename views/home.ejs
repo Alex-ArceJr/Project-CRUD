@@ -15,8 +15,8 @@
       </td>
       <td class="book-cell">
         <div id="book">
-          <% books.forEach(b=> {%>
-              <% if(b.genre === 'Fiction'){%>
+          <% fiction.forEach((b,i)=> {%>
+              <% if(i < 5){%>
                 <a href="/books/<%= b._id %>"><img src="<%= b.imgURL %>" height="200" width="200"></a>
                 <% } %>
          <% } )%>
@@ -31,8 +31,8 @@
       </td>
       <td class="book-cell">
         <div id="book">
-          <% books.forEach(b=> {%>
-            <% if(b.genre === 'Non-fiction'){%>
+          <% nonfiction.forEach((b, i)=> {%>
+            <% if(i < 5){%>
               <a href="/books/<%= b._id %>"><img src="<%= b.imgURL %>" height="200" width="200"></a>
               <% } %>
        <% } )%>
@@ -46,8 +46,8 @@
       </td>
       <td class="book-cell">
         <div id="book">
-          <% books.forEach(b=> {%>
-            <% if(b.genre === 'Mystery'){%>
+          <% mystery.forEach((b, i)=> {%>
+            <% if(i < 5){%>
               <a href="/books/<%= b._id %>"><img src="<%= b.imgURL %>" height="200" width="200"></a>
               <% } %>
        <% } )%>
@@ -61,8 +61,8 @@
       </td>
       <td class="book-cell">
         <div id="book">
-          <% books.forEach(b=> {%>
-            <% if(b.genre === 'Autobiography'){%>
+          <% autobio.forEach((b, i)=> {%>
+            <% if(i < 5){%>
               <a href="/books/<%= b._id %>"><img src="<%= b.imgURL %>" height="200" width="200"></a>
               <% } %>
        <% } )%>
@@ -76,8 +76,8 @@
       </td>
       <td class="book-cell">
         <div id="book">
-          <% books.forEach(b=> {%>
-            <% if(b.genre === 'Other'){%>
+          <% other.forEach((b, i)=> {%>
+            <% if(i < 5){%>
               <a href="/books/<%= b._id %>"><img src="<%= b.imgURL %>" height="200" width="200"></a>
               <% } %>
        <% } )%>
@@ -88,3 +88,4 @@
 </table>
   <%- include('./partials/footer')%>
 </body>
+

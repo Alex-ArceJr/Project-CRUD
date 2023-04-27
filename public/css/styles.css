@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Artifika&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
 
 * {
     box-sizing: border-box;
@@ -15,7 +16,6 @@ body {
 .nav-container {
     height: 50px;
     display: block;
-    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     /* position: fixed; */
     top: 0px;
     width: 100%;
@@ -23,27 +23,9 @@ body {
     font-size: 12px;
 }
 
-#form-container {
-    position: relative;
-    min-height: 100vh;
-    display: inline-block;
-    background-color: rgb(101, 101, 183);
-    margin-top: 3vmin;
-}
-
-
-.form-body {
-
-    color: rgb(0, 0, 0);
-    padding-bottom: 2.5rem;
-    overflow: auto;
-    line-height: 5vh;
-    text-align: center;
-
-}
 
 .nav-bar {
-    background-color: #b8bdc5;
+    background-color: rgb(223, 221, 221);
     display: flex;
     height: 50px;
     justify-content: center;
@@ -57,6 +39,10 @@ body {
     text-indent: inital;
     border-spacing: 2px;
     margin-top: -80px;
+    /* padding-right: 49rem; */
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 .genre{
@@ -69,7 +55,7 @@ body {
 ul {
     margin: 0;
     font-size: 12px;
-    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /* font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif; */
     line-height: 18px;
     padding: 0;
 }
@@ -141,21 +127,54 @@ h1 > strong {
     min-height: 200px;
 }
 
+.show-book, .show-review{
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+}
+
+#cover-image {
+    border: 0;
+    width: 250px;
+    max-height: 400px;
+    min-height: 400px;
+}
+
+#content {
+    text-align: center;
+    margin: 7px;
+    font-size: 20px;
+    font-family: Georgia,serif;
+}
+
+#show-btn{
+    background-color: #9fbfe2;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 100%;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    transition-property: background-color, color;
+}
+
+#show-btn:hover{
+    background-color: #008CBA;
+    color: white;
+}
+
+.buttons{
+    padding: 50px;
+
+}
+
 footer {
     text-align: center;
   }
 
-  input, button {
-      align-self: flex-end;
-      font-size: 18px;
-      padding: 5px 5px;
-      background-color: #9c94a9;
-      color: white;
-      width: 20%;
-      text-align: center;
-      display: inline-block;
-      text-decoration: none;
-      border: 0px;
-      transition: all 0.3s 0s ease-in-out;
-      margin: 10px;
-  }
+
