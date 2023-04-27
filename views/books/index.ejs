@@ -18,31 +18,27 @@
       </ul>
     </nav>
     </div>
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Image</th>
+    <div id="index-container">
+      <div class="index-body">
 
-    </tr>
-  </thead>
-  <tbody>
-    <% books.forEach(b => {%>
-      <tr>
-        <td><%=b.title%></td>
-        <td><%=b.author%></td>
-        <td><a href="/books/<%= b._id %>"><img src="<%= b.imgURL %>" height="250" width="250"><br>
-          <%= b.title %>
-        </a></td>
-        <!-- <td><a href="/books/<%=b._id%>">Details</a></td> -->
-      </tr>
-    <% })%>
-  </tbody>
-</table>
+        <% books.forEach(b => {%>
 
+          <div class="index-book">
+            <p>
+              <a class="index-image" href="/books/<%= b._id %>"><img src="<%= b.imgURL %>" height="250" width="250"><br></a>
+              <a id="index-title" href="/books/<%= b._id %>">
+                <%= b.title %> <br>
+              </a>
+             <span>
+               <%=b.author%>
+             </span>
+            </p>
+          </div>
+          <% })%>
+        </div>
 
 
   <%- include('../partials/footer') %>
+  </div>
 </body>
 </html>

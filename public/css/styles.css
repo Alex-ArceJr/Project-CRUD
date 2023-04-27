@@ -92,7 +92,7 @@ li > a {
     /* padding-right: 49rem; */
     margin-left: auto;
     margin-right: auto;
-    
+
 }
 
 .genre {
@@ -249,6 +249,39 @@ select:focus {
     margin-right: auto;
 }
 
+#index-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+.index-body {
+
+    margin-top: 2.5vmin;
+    padding: 1vmin;
+    overflow: auto;
+    line-height: 5vh;
+    max-width: 100%;
+}
+
+.index-book {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    float: left;
+    padding: 3vmin;
+    margin: 1vmin;
+    align-items: center;
+    padding-left: 6.5vmin;
+
+}
+
+#index-title  {
+
+    max-width: 250px;
+}
+
+
 .form-button[type="submit"]:hover {
     background-color: #006080;
 }
@@ -256,5 +289,3 @@ select:focus {
 footer {
     text-align: center;
   }
-
-
