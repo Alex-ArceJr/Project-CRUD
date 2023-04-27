@@ -24,15 +24,19 @@
         <% books.forEach(b => {%>
 
           <div class="index-book">
-            <p>
-              <a class="index-image" href="/books/<%= b._id %>"><img src="<%= b.imgURL %>" height="250" width="250"><br></a>
+            <a class="index-image" href="/books/<%= b._id %>"><img src="<%= b.imgURL %>" height="250" width="250"></a><br>
+            <div id="index-title-author-container">
               <a id="index-title" href="/books/<%= b._id %>">
-                <%= b.title %> <br>
-              </a>
-             <span>
-               <%=b.author%>
-             </span>
-            </p>
+                <p>
+
+                    <%= b.title %> <br>
+                  </a>
+
+                   <%=b.author%>
+                  </div>
+                </p>
+
+
           </div>
           <% })%>
         </div>
