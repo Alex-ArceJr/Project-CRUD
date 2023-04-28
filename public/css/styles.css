@@ -121,6 +121,35 @@ li > a {
   margin: 10px;
 }
 
+.err{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 55%;
+  align-items: center;
+  margin: 0 auto;
+  flex-grow: 1;
+}
+.error-img{
+    height: 40vmin;
+    width: 40vmin;
+    margin: 10vmin;
+}
+
+.error-text{
+  text-transform: capitalize;
+  margin: 4vmin;
+  letter-spacing: 0.1vmin;
+  font-weight: 600;
+  font-size: 2.8vmin;
+  color: #5d3e3e;
+}
+
+.error-p{
+  font-size: 2vmin;
+}
+
 .show-book,
 .show-review {
   margin-right: auto;
