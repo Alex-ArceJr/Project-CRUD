@@ -7,6 +7,10 @@ https://stormy-dusk-14702.herokuapp.com/
 * Alex Arce: https://github.com/Alex-ArceJr
 * Nadira Omar:  https://github.com/nadirao
 
+### Trello - Wireframe and ERD Link
+
+https://trello.com/b/pGBGWeFg/project-2
+
 
 ## About the Project:
 ![Screen Shot 2023-04-27 at 9 10 37 PM](https://user-images.githubusercontent.com/106491940/235052277-a812ec98-87c2-41d6-8040-3d2c00e4d5bd.png)This is a book library database where users can create a library of books, add new boks, edit books, and write reviews for books.
@@ -62,9 +66,6 @@ This page shows more details about the book and a review can be left.
 This is where users can edit the information of book in library.
 ![Screen Shot 2023-04-27 at 9 33 29 PM](https://user-images.githubusercontent.com/106491940/235054915-c9a80058-f014-437e-a422-ef8c60166437.png)
 
-### Trello - Wireframe and ERD Link
-
-https://trello.com/b/pGBGWeFg/project-2
 
 
 
