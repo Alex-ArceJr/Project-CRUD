@@ -75,30 +75,30 @@
           <option value="4">4</option>
           <option value="5" selected>5</option>
 
-          <input type="submit" value="Add Review">
+          <input id="show-input-review" type="submit" value="Add Review">
       </label>
     </form>
     <% if(book.reviews.length) { %>
-      <table>
+      <table id="show-table-review">
         <thead>
-          <tr>
-            <th>Date</th>
-            <th>Review</th>
-            <th>Rating</th>
+          <tr class="show-row-table">
+            <th class="show-date">Date</th>
+            <th class="show-review">Review</th>
+            <th class="show-rating">Rating</th>
           </tr>
         </thead>
         <tbody>
           <% let total = 0 %>
           <% book.reviews.forEach((r, i) => { %>
             <% total += r.rating %>
-            <tr>
-              <td>
+            <tr class="show-row-table">
+              <td class="show-date">
                 <%= r.createdAt.toLocaleDateString() %>
               </td>
-              <td>
+              <td class="show-review">
                 <%= r.content %>
               </td>
-              <td>
+              <td class="show-rating">
                 <%= r.rating %>
               </td>
               <td>
@@ -110,7 +110,7 @@
             </tr>
             <% }) %>
             <tr>
-              <td colspan="2">Total Rating</td>
+              <td class="show-total-rating" colspan="2">Total Rating</td>
             </tr>
             <tr>
               <td><%= (total / book.reviews.length).toFixed(1)%></td>

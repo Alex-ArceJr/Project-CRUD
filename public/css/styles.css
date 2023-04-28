@@ -351,7 +351,44 @@ footer {
   text-align: center;
 }
 
-#show-rating-review {
-    display: block;
+#show-rating-review  {
+    display: flex;
+    justify-content: space-evenly;
 
 }
+
+.show-date {
+    min-width: 10%;
+    max-width: 10%;
+
+}
+.show-review {
+    min-width: 80%;
+    max-width: 80%;
+    padding: 5px;
+}
+.show-rating {
+    min-width: 10%;
+    max-width:  10%;
+
+}
+
+.show-total-rating {
+    display: flex;
+    justify-content: center;
+}
+
+#show-input-review {
+    border: 1px solid black;
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px grey;
+}
+
+/* #show-table-review {
+display: flex;
+flex-direction: column;
+justify-content: center;
+width: 75%;
+} */
