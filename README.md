@@ -2,8 +2,9 @@
 
 https://stormy-dusk-14702.herokuapp.com/
 
-## Acknowledgments
+## Collaborators
 
+* Alex Arce: https://github.com/Alex-ArceJr
 * Nadira Omar:  https://github.com/nadirao
 
 
