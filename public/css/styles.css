@@ -6,9 +6,6 @@
   box-sizing: border-box;
 }
 
-/* html, body{
-    height: 100%;
-} */
 
 body {
   display: flex;
@@ -37,7 +34,6 @@ h1 {
 .nav-container {
   height: 50px;
   display: block;
-  /* position: fixed; */
   top: 0px;
   width: 100%;
   z-index: 70;
@@ -56,7 +52,6 @@ h1 {
 ul {
   margin: 0;
   font-size: 12px;
-  /* font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif; */
   line-height: 18px;
   padding: 0;
 }
@@ -70,7 +65,6 @@ li {
 li > a {
   color: black;
   font-size: 16px;
-  /* font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif; */
   line-height: 50px;
   padding: 0 30px;
   text-decoration: none;
@@ -188,7 +182,7 @@ li > a {
 }
 
 #form-container {
-  /* height: 95vmin; */
+
   margin-top: 20px;
   display: flex;
   flex-direction: column;
@@ -230,37 +224,6 @@ li > a {
   margin-right: auto;
 }
 
-/* #index-container {
-  position: relative;
-  min-height: 100vh;
-}
-
-.index-body {
-  margin-top: 2.5vmin;
-  padding: 1vmin;
-  overflow: auto;
-  line-height: 5vh;
-  max-width: 100%;
-}
-
-.index-book {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  float: left;
-  padding: 3vmin;
-  margin: 1vmin;
-  align-items: center;
-  padding-left: 6.5vmin;
-}
-
-#index-title {
-  text-decoration: none;
-  max-width: 250px;
-  overflow: hidden;
-
-} */
 
 .index-body{
     display: flex;
@@ -318,8 +281,7 @@ li > a {
     transition: all 0.2s;
     display: flex;
     align-items: center;
-    /* justify-content: flex-end;
-    margin-right: 3vmin; */
+
 
 }
 
@@ -351,7 +313,37 @@ footer {
   text-align: center;
 }
 
-#show-rating-review {
-    display: block;
+#show-rating-review  {
+    display: flex;
+    justify-content: space-evenly;
 
+}
+
+.show-date {
+    min-width: 10%;
+    max-width: 10%;
+
+}
+.show-review {
+    min-width: 80%;
+    max-width: 80%;
+    padding: 5px;
+}
+.show-rating {
+    min-width: 10%;
+    max-width:  10%;
+
+}
+
+.show-total-rating {
+    display: flex;
+    justify-content: center;
+}
+
+#show-input-review {
+    border: 1px solid black;
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px grey;
 }
