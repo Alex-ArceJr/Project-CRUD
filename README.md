@@ -62,6 +62,12 @@ This page shows more details about the book and a review can be left.
 This is where users can edit the information of book in library.
 ![Screen Shot 2023-04-27 at 9 33 29 PM](https://user-images.githubusercontent.com/106491940/235054915-c9a80058-f014-437e-a422-ef8c60166437.png)
 
+### Trello - Wireframe and ERD Link
+
+https://trello.com/b/pGBGWeFg/project-2
+
+
+
 
 
 
