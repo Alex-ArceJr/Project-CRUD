@@ -318,8 +318,9 @@ li > a {
     transition: all 0.2s;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    margin-right: 3vmin;
+    /* justify-content: flex-end;
+    margin-right: 3vmin; */
+
 }
 
 #review-textarea:hover {
@@ -334,7 +335,7 @@ li > a {
     border-color: #333333;
 }
 
-#review-section {
+#review-section > form > .review-text-area {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -348,4 +349,9 @@ li > a {
 
 footer {
   text-align: center;
+}
+
+#show-rating-review {
+    display: block;
+
 }
