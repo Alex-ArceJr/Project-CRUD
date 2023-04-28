@@ -13,7 +13,6 @@ async function create(req, res) {
     await Book.create(req.body)
     res.redirect('/books')
   } catch (error){
-    console.log(error)
     res.render('error', {title: 'Something went wrong'})
   }
 }
@@ -25,7 +24,6 @@ async function edit(req, res){
     // console.log(findBook)
     res.render(`books/edit`, {title: 'Update Book', book: findBook})
   } catch (error) {
-    console.log(error)
     res.render('error', {title: 'Something went wrong'})
   }
 }
@@ -34,13 +32,10 @@ async function update(req,res){
   try {
     const updateBook = await Book.findOneAndUpdate({_id: req.params.id}, req.body, {new: true})
     await updateBook.save()
-    // // console.log(updateBook)
-    //  await update(req.body)
 
     res.redirect(`/books/${updateBook._id}`)
 
   } catch (error) {
-    console.log(error)
     res.render('error', {title: 'Something went wrong'})
   }
 }
@@ -51,7 +46,6 @@ async function index(req, res) {
 
     res.render('books/index', {books: allBooks, title: 'All books'})
   } catch(error) {
-    console.log(error)
     res.render('error', {title: 'Something went wrong'})
   }
 }
@@ -62,7 +56,6 @@ async function deleteBook(req, res) {
 
     res.redirect('/books')
   } catch(error) {
-    console.log(error)
     res.render('error', {title: 'Something went wrong'})
   }
 }
@@ -73,7 +66,6 @@ async function show(req, res) {
     res.render('books/show',{book: foundBook, title: 'See Book Details'})
 
   } catch(error) {
-    console.log(error)
     res.render('error', {title: 'Something went wrong'})
   }
 }
