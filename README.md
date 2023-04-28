@@ -52,6 +52,7 @@ This form is where user come to add a new book in library.
 
 ### Book Details
 This page shows more details about the book and a review can be left.
+
 ![Screen Shot 2023-04-27 at 9 32 45 PM](https://user-images.githubusercontent.com/106491940/235054827-a08fdf34-d667-43e8-990f-e55bcffb40b6.png)
 
 
