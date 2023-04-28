@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head')%>
+<body>
+  <body class="show-page">
+    <%- include('../partials/header')%>
+    <div class="nav-container">
+      <nav class="nav-bar">
+        <ul class="menu">
+          <li class="nav-home">
+            <a href="/">Home</a>
+          </li>
+          <li class="nav-add">
+            <a  href="/books/new">Add Book</a>
+          </li>
+          <li class="nav-all">
+            <a href="/books"><strong>All Books</strong></a>
+          </li>
+        </ul>
+      </nav>
+      </div>
+  <section class="show-book">
+    <table>
+      <tbody>
+        <tr id="show-image-tr">
+          <td>
+          <img id="cover-image" src="<%= book.imgURL %>" alt="<%= book.title %>" height="250" width="250">
+          </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="show-content"> <strong>Title:</strong> <%= book.title %></p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="show-content"> <strong>Author:</strong> <%= book.author %></p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="show-content"> <strong>Price:</strong> $<%= book.price %></p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="show-content"> <strong>ISBN:</strong> <%= book.isbn %></p>
+            </td>
+          </tr>
+          <tr>
+            <td class="buttons">
+              <a href="/books/<%= book.id%>/edit"><button id="show-btn">Edit Book</button></a>
+              <form action="/books/<%= book._id %>/?_method=DELETE" method="POST">
+                <button id="show-btn" type="submit">Delete Book</button>
+              </form>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+  </section>
+  <h2 id="review-text">Reviews</h2>
+  <div id="review-section">
+
+    <form action="/books/<%= book._id %>/reviews" method="POST">
+      <label class="review-text-area">
+
+        <textarea id="review-textarea" name="content" cols="30" rows="10" required></textarea>
+      </label><br>
+      <label id="show-rating-review">
+
+        <select name="rating">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5" selected>5</option>
+
+          <input id="show-input-review" type="submit" value="Add Review">
+      </label>
+    </form>
+    <% if(book.reviews.length) { %>
+      <table id="show-table-review">
+        <thead>
+          <tr class="show-row-table">
+            <th class="show-date">Date</th>
+            <th class="show-review">Review</th>
+            <th class="show-rating">Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% let total = 0 %>
+          <% book.reviews.forEach((r, i) => { %>
+            <% total += r.rating %>
+            <tr class="show-row-table">
+              <td class="show-date">
+                <%= r.createdAt.toLocaleDateString() %>
+              </td>
+              <td class="show-review">
+                <%= r.content %>
+              </td>
+              <td class="show-rating">
+                <%= r.rating %>
+              </td>
+              <td>
+                  <!-- <%= r._id %> -->
+                  <form action="/books/<%= book._id %>/reviews/<%= i %>/?_method=DELETE" method="POST">
+                    <button type="submit">X</button>
+                  </form>
+              </td>
+            </tr>
+            <% }) %>
+            <tr>
+              <td class="show-total-rating" colspan="2">Total Rating</td>
+            </tr>
+            <tr>
+              <td><%= (total / book.reviews.length).toFixed(1)%></td>
+            </tr>
+        </tbody>
+      </table>
+      <% } else { %>
+        <h5>No Reviews Yet</h5>
+        <% } %>
+  </div>
+
+        </section>
+
+  <%- include('../partials/footer')%>
+</body>
+</html>

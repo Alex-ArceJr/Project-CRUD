@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head')%>
+<body class="home-page">
+  <%- include('./partials/header')%>
+  <div class="nav-container">
+    <nav class="nav-bar">
+      <ul class="menu">
+        <li class="nav-home">
+          <a href="/"> <strong>Home</strong></a>
+        </li>
+        <li class="nav-add">
+          <a  href="/books/new"> Add Book</a>
+        </li>
+        <li class="nav-all">
+          <a href="/books"> All Books</a>
+        </li>
+      </ul>
+    </nav>
+    </div>
+<table class="home-table">
+  <tbody>
+    <tr class="genre">
+      <td class="genre-cell">
+        <div class="genre-name">
+          <h3>Fiction</h3>
+        </div>
+      </td>
+      <td class="book-cell">
+        <div id="book">
+          <% let count = 0 %>
+          <% books.forEach(b=> {%>
+            <% if(b.genre === 'Fiction' && count < 5){%>
+                <a href="/books/<%= b._id %>"><img class="home-img" src="<%= b.imgURL %>"></a>
+                <% count++ %>
+                <% } %>
+         <% } )%>
+        </div>
+      </td>
+    </tr><br>
+    <tr class="genre">
+      <td class="genre-cell">
+        <div class="genre-name">
+          <h3>Non-Fiction</h3>
+        </div>
+      </td>
+      <td class="book-cell">
+        <div id="book">
+          <% books.forEach(b=> {%>
+            <% if(b.genre === 'Non-fiction' && count < 10){%>
+                <a href="/books/<%= b._id %>"><img class="home-img" src="<%= b.imgURL %>"></a>
+                <% count++ %>
+                <% } %>
+         <% } )%>
+        </div>
+      </td><br>
+    </tr><tr class="genre">
+      <td class="genre-cell">
+        <div class="genre-name">
+          <h3>Mystery</h3>
+        </div>
+      </td>
+      <td class="book-cell">
+        <div id="book">
+          <% books.forEach(b=> {%>
+            <% if(b.genre === 'Mystery' && count < 15){%>
+                <a href="/books/<%= b._id %>"><img class="home-img" src="<%= b.imgURL %>"></a>
+                <% count++ %>
+                <% } %>
+         <% } )%>
+        </div>
+      </td><br>
+    </tr><tr class="genre">
+      <td class="genre-cell">
+        <div class="genre-name">
+          <h3>Autobiography</h3>
+        </div>
+      </td>
+      <td class="book-cell">
+        <div id="book">
+          <% books.forEach(b=> {%>
+            <% if(b.genre === 'Autobiography' && count < 20){%>
+                <a href="/books/<%= b._id %>"><img class="home-img" src="<%= b.imgURL %>"></a>
+                <% count++ %>
+                <% } %>
+         <% } )%>
+        </div>
+      </td><br>
+    </tr><tr class="genre">
+      <td class="genre-cell">
+        <div class="genre-name">
+          <h3>Other</h3>
+        </div>
+      </td>
+      <td class="book-cell">
+        <div id="book">
+          <% books.forEach(b=> {%>
+            <% if(b.genre === 'Other' && count < 25){%>
+                <a href="/books/<%= b._id %>"><img class="home-img" src="<%= b.imgURL %>"></a>
+                <% count++ %>
+                <% } %>
+         <% } )%>
+        </div>
+      </td><br>
+    </tr>
+</tbody>
+</table>
+
+  <%- include('./partials/footer')%>
+</body>
+</html>
+

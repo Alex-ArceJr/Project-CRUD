@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head')%>
+<body class="new-page">
+  <%- include('../partials/header')%>
+  <div class="nav-container">
+    <nav class="nav-bar">
+      <ul class="menu">
+        <li class="nav-home">
+          <a href="/">Home</a>
+        </li>
+        <li class="nav-add">
+          <a  href="/books/new"> <strong>Add Book</strong></a>
+        </li>
+        <li class="nav-all">
+          <a href="/books">All Books</a>
+        </li>
+      </ul>
+    </nav>
+    </div>
+  <div id="form-container">
+    <h2>New Book</h1>
+    <div class="form-body">
+    <form action="/books" method="POST">
+      <label>Title:
+        <input type="text" name="title" id="">
+      </label><br>
+      <label>Genre:
+        <select name="genre" id="genre">
+          <option hidden disabled selected value> -- select a genre -- </option>
+          <option value="Fiction">Fiction</option>
+          <option value="Non-fiction">Non-Fiction</option>
+          <option value="Mystery">Mystery</option>
+          <option value="Autobiography">Autobiography</option>
+          <option value="Other">Other</option>
+        </select>
+      </label><br>
+      <label>Author:
+        <input type="text" name="author" id="">
+      </label><br>
+      <label>Image-URL:
+        <input type="text" name="imgURL" id="">
+      </label><br>
+      <label>Price:
+        <input type="number" name="price" id="">
+      </label><br>
+      <label>ISBN:
+        <input type="number" name="isbn" id="">
+      </label><br>
+    </div>
+    <button class="form-button" type="submit">Add Book</button>
+  </form>
+</div>
+  <%- include('../partials/footer')%>
+</body>
+</html>

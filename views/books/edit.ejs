@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head')%>
+<body class="edit-page">
+  <%- include('../partials/header')%>
+  <div class="nav-container">
+    <nav class="nav-bar">
+      <ul class="menu">
+        <li class="nav-home">
+          <a href="/">Home</a>
+        </li>
+        <li class="nav-add">
+          <a  href="/books/new">Add Book</a>
+        </li>
+        <li class="nav-all">
+          <a href="/books"> <strong>All Books</strong></a>
+        </li>
+      </ul>
+    </nav>
+    </div>
+    <div id="form-container">
+      <h2>Edit Book</h1>
+        <div class="form-body">
+      <form action="/books/<%= book._id %>?_method=PUT" method="POST">
+        <label>Title:
+          <input type="text" name="title" id="" value="<%= book.title %>">
+        </label><br>
+        <label>Genre:
+          <select name="genre" id="genre" >
+            <option hidden disabled selected value> <%= book.genre %></option>
+            <option value="Fiction">Fiction</option>
+            <option value="Non-fiction">Non-Fiction</option>
+            <option value="Mystery">Mystery</option>
+            <option value="Autobiography">Autobiography</option>
+            <option value="Other">Other</option>
+          </select>
+        </label><br>
+        <label>Author:
+          <input type="text" name="author" id="" value="<%= book.author %>">
+        </label><br>
+        <label>Image-URL:
+          <input type="text" name="imgURL" id="" value="<%= book.imgURL %>">
+        </label><br>
+        <label>Price:
+      <input type="number" name="price" id="" value="<%= book.price %>">
+        </label><br>
+        <label>ISBN:
+          <input type="number" name="isbn" id="" value="<%= book.isbn %>">
+        </label><br>
+    </div>
+    <button class="form-button" type="submit">Submit Book</button>
+  </form>
+</div>
+
+<%- include('../partials/footer')%>
+</body>
+</html>
